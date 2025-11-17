@@ -1,0 +1,367 @@
+/* Normal CSS */
+.footerWrap {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  padding: 60px 40px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+  gap: 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.footerWrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #fbbf24;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.governmentLogo {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.governmentLogo i {
+  font-size: 1.5rem;
+  color: #fbbf24;
+}
+
+.govTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.box p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.box h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.box h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #fbbf24;
+  border-radius: 2px;
+}
+
+.box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.box ul li {
+  margin: 0;
+}
+
+.box ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.box ul li a:hover {
+  color: #fbbf24;
+  transform: translateX(5px);
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contactInfo li i {
+  color: #fbbf24;
+  width: 16px;
+  margin-top: 2px;
+}
+
+.aboutBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+.aboutBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fbbf24;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.media {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.socialLink i {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: #fbbf24;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+}
+
+.socialLink:hover i {
+  color: #1e3a8a;
+}
+
+.bottomFooter {
+  background: #1e3a8a;
+  padding: 25px 40px;
+  text-align: center;
+}
+
+.bottomFooter hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+
+.bottomFooter p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .footerWrap {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding: 50px 35px 35px;
+  }
+
+  .box:first-child {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .logoContainer {
+    justify-content: center;
+  }
+
+  .aboutBtn {
+    align-self: center;
+  }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .footerWrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px 30px 30px;
+  }
+
+  .box:first-child {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .logoContainer {
+    justify-content: flex-start;
+  }
+
+  .aboutBtn {
+    align-self: flex-start;
+  }
+
+  .box:nth-child(4),
+  .box:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+
+  .media {
+    justify-content: flex-start;
+  }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .footerWrap {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 35px 20px 25px;
+  }
+
+  .box:first-child {
+    grid-column: 1;
+    text-align: center;
+  }
+
+  .logoContainer {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .aboutBtn {
+    align-self: center;
+  }
+
+  .box h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .box ul li a {
+    font-size: 0.9rem;
+  }
+
+  .contactInfo li {
+    font-size: 0.9rem;
+  }
+
+  .media {
+    justify-content: center;
+  }
+
+  .socialLink {
+    width: 38px;
+    height: 38px;
+  }
+
+  .socialLink i {
+    font-size: 0.9rem;
+  }
+
+  .bottomFooter {
+    padding: 20px;
+  }
+
+  .bottomFooter p {
+    font-size: 0.85rem;
+  }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .footerWrap {
+    padding: 30px 15px 20px;
+    gap: 20px;
+  }
+
+  .governmentLogo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .governmentLogo i {
+    font-size: 1.3rem;
+  }
+
+  .govTitle {
+    font-size: 1.3rem;
+  }
+
+  .box p {
+    font-size: 0.9rem;
+  }
+
+  .aboutBtn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .socialLink {
+    width: 36px;
+    height: 36px;
+  }
+
+  .socialLink i {
+    font-size: 0.85rem;
+  }
+
+  .bottomFooter {
+    padding: 15px;
+  }
+
+  .bottomFooter p {
+    font-size: 0.8rem;
+  }
+}
