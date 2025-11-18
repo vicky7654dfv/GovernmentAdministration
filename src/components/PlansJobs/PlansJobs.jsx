@@ -18,45 +18,57 @@ const PlansJobs = () => {
   ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const targetValues = {
-            plans: 1567,
-            jobs: 234,
-            services: 89,
-            citizens: 2456789
-          };
-          
-          Object.keys(targetValues).forEach(key => {
-            let start = 0;
-            const end = targetValues[key];
-            const duration = 2000;
-            const increment = end / (duration / 16);
-            
-            const timer = setInterval(() => {
-              start += increment;
-              if (start >= end) {
-                start = end;
-                clearInterval(timer);
-              }
-              setCounters(prev => ({
-                ...prev,
-                [key]: Math.floor(start)
-              }));
-            }, 16);
-          });
-        }
-      },
-      { threshold: 0.5 }
-    );
+  const element = counterRef.current;
+  let timers = []; // store all interval IDs
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+
+        const targetValues = {
+          plans: 1567,
+          jobs: 234,
+          services: 89,
+          citizens: 2456789
+        };
+
+        Object.keys(targetValues).forEach(key => {
+          let start = 0;
+          const end = targetValues[key];
+          const duration = 2000;
+          const increment = end / (duration / 16);
+
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+              start = end;
+              clearInterval(timer);
+            }
+            setCounters(prev => ({
+              ...prev,
+              [key]: Math.floor(start)
+            }));
+          }, 16);
+
+          timers.push(timer);
+        });
+
+        observer.unobserve(entry.target); // trigger only once
+      }
+    },
+    { 
+      threshold: 0.1,          // MUCH better for all mobile screens
+      rootMargin: "100px 0px"  // triggers earlier, fixes Vercel mobile issue
     }
+  );
 
-    return () => observer.disconnect();
-  }, []);
+  if (element) observer.observe(element);
+
+  return () => {
+    observer.disconnect();
+    timers.forEach(t => clearInterval(t)); // clean all timers
+  };
+}, []);
 
   const formatNumber = (num) => {
     if (num >= 1000000) {
