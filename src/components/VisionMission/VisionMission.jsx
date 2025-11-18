@@ -6,21 +6,28 @@ const VisionMission = () => {
   const componentRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimated(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
+  const element = componentRef.current;
 
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setAnimated(true);
+        observer.unobserve(entry.target); // stop observing after first trigger
+      }
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "100px 0px 0px 0px"
     }
+  );
 
-    return () => observer.disconnect();
-  }, []);
+  if (element) {
+    observer.observe(element);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
 
   return (
     <div ref={componentRef} className={styles.container} data-aos="fade">
