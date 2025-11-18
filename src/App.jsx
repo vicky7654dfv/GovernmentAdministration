@@ -11,7 +11,7 @@ import Services from "./pages/Services/Services";
 import Contact from "./pages/Contact/Contact";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
-import FAQ from "./pages/FAQ/FAQ.JSX";
+import FAQ from "./pages/FAQ/FAQ";
 import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
