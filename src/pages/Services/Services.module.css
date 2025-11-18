@@ -1,0 +1,71 @@
+.servicesPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+  padding: 40px 20px;
+}
+
+.servicesHeader {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.servicesHeader h1 {
+  font-size: 3rem;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.servicesHeader p {
+  font-size: 1.2rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .servicesHeader h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesPage {
+    padding: 30px 15px;
+  }
+  
+  .servicesHeader {
+    margin-bottom: 20px;
+  }
+  
+  .servicesHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .servicesHeader p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .servicesPage {
+    padding: 20px 10px;
+  }
+  
+  .servicesHeader h1 {
+    font-size: 1.8rem;
+  }
+  
+  .servicesHeader p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 375.2px) {
+  .servicesHeader h1 {
+    font-size: 1.6rem;
+  }
+}

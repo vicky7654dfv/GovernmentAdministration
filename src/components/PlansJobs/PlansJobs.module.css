@@ -1,0 +1,212 @@
+.plansJobsComponent {
+  padding: 40px 0;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.plansSection {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
+  margin-bottom: 30px;
+}
+
+.plansSection h2 {
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.statCard {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+  border-radius: 15px;
+  border: 1px solid #e0e7ff;
+  transition: transform 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  transition: all 0.5s ease;
+}
+
+.statLabel {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.jobsSection {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
+}
+
+.jobsSection h3 {
+  color: #1e3a8a;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.jobsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.jobCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background: #f8faff;
+  border-radius: 12px;
+  border-left: 4px solid #1e3a8a;
+  transition: all 0.3s ease;
+}
+
+.jobCard:hover {
+  background: #f0f4ff;
+  transform: translateX(5px);
+}
+
+.jobInfo {
+  flex: 1;
+}
+
+.jobInfo h4 {
+  color: #1e3a8a;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.jobInfo p {
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.vacancies {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btnPrimary {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #1e3a8a;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .plansJobsComponent {
+    padding: 30px 0;
+  }
+  
+  .plansSection, .jobsSection {
+    padding: 30px;
+  }
+  
+  .plansSection h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .jobCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .jobCard button {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 425.6px) {
+  .plansJobsComponent {
+    padding: 20px 0;
+  }
+  
+  .plansSection, .jobsSection {
+    padding: 20px;
+  }
+  
+  .plansSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .statCard {
+    padding: 20px 15px;
+  }
+  
+  .statNumber {
+    font-size: 2rem;
+  }
+  
+  .jobsSection h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 375.2px) {
+  .plansSection h2 {
+    font-size: 1.3rem;
+  }
+  
+  .statNumber {
+    font-size: 1.8rem;
+  }
+  
+  .btnPrimary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
