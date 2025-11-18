@@ -23,9 +23,9 @@ function App() {
       easing: "ease-in-out",
     });
   }, []);
+
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
       <CategoryProvider>
         <ScrollToTop />
         <Routes>
@@ -37,12 +37,10 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/DashBoard" element={<Dashboard />} />
-          <Route path="/Error" element={<Error />} /> 
-           {/* <Route path="/HomePage2" element={<HomePage2 />} /> */}
+          <Route path="/Error" element={<Error />} />
         </Routes>
-        </CategoryProvider>
-      </BrowserRouter>
-    </>
+      </CategoryProvider>
+    </BrowserRouter>
   );
 }
 
