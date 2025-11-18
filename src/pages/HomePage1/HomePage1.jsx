@@ -8,6 +8,7 @@ import SchemeSearching from '../../components/SchemeSearching/SchemeSearching'
 import Footer from '../../components/Footer/Footer'
 
 export default function HomePage1() {
+  
   return (
     <div>
         <Header />

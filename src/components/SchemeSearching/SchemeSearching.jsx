@@ -113,21 +113,29 @@ const SearchScheme = () => {
 
   // Sync activeCategory with selectedType
   useEffect(() => {
-    if (activeCategory) {
-      setSelectedType(activeCategory);
-      
-      // Scroll to the first card of that category after a short delay
+  if (activeCategory) {
+    setSelectedType(activeCategory);
+
+    const fromFooter = sessionStorage.getItem("fromFooterCategory");
+
+    if (!fromFooter) {
       setTimeout(() => {
-        const firstCard = document.querySelector(`[data-category="${activeCategory}"]`);
+        const firstCard = document.querySelector(
+          `[data-category="${activeCategory}"]`
+        );
         if (firstCard) {
-          firstCard.scrollIntoView({ 
-            behavior: "smooth", 
+          firstCard.scrollIntoView({
+            behavior: "smooth",
             block: "center"
           });
         }
       }, 500);
     }
-  }, [activeCategory]);
+
+    sessionStorage.removeItem("fromFooterCategory");
+  }
+}, [activeCategory]);
+
 
   const filteredAndSortedSchemes = useMemo(() => {
     let filtered = schemesData.filter(scheme => {

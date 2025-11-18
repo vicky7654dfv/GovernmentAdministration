@@ -9,17 +9,10 @@ export default function Footer() {
   const location = useLocation();
 
   const handleCategoryClick = (category) => {
-    setActiveCategory(category);
-    
-    // If we're not already on the home page, navigate there
-    if (location.pathname !== "/") {
-      navigate("/");
-    } else {
-      // If we're already on home page, just set the category
-      // The SearchScheme component will handle the filtering and scrolling
-      console.log(`Filtering schemes by: ${category}`);
-    }
-  };
+  sessionStorage.setItem("scrollToTop", "true");
+  setActiveCategory(category);
+  navigate("/");
+};
 
   const handleQuickLinkClick = (e, path) => {
     e.preventDefault();
@@ -47,7 +40,7 @@ export default function Footer() {
 
   return (
     <>
-      <div data-aos="fade" className={Style.footerWrap}>
+      <div className={Style.footerWrap}>
         <div className={Style.box}>
           <div className={Style.logoContainer}>
             <div className={Style.governmentLogo}>

@@ -61,7 +61,7 @@ const HorizontalScheme = () => {
 
   const navigate= useNavigate();
   return (
-    <div data-aos="fade" className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.header}>
         <h2 className={styles.title}>Government Initiatives Gallery</h2>
         <p className={styles.subtitle}>

@@ -210,7 +210,7 @@ const Documents = () => {
   };
 
   return (
-    <div data-aos="fade" className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.header}>
         <h2 className={styles.title}>Government Documents & Reports</h2>
         <p className={styles.subtitle}>
