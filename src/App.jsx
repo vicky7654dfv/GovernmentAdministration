@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import FAQ from "./pages/FAQ/FAQ";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import HomePage2 from "./pages/HomePage2/HomePage2";
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/DashBoard" element={<Dashboard />} />
           <Route path="/Error" element={<Error />} />
+          <Route path="/HomePage2" element={<HomePage2 />} />
         </Routes>
       </CategoryProvider>
     </BrowserRouter>

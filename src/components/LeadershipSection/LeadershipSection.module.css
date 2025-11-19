@@ -1,0 +1,515 @@
+.leadershipSection {
+  padding: 40px 0;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: white;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.6s forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.leadershipSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+}
+
+.leadershipSection::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -30%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-radius: 2px;
+}
+
+.leadersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.leaderCard {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateZ(0); /* Fix for hover flickering */
+}
+
+.leaderCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.leaderCard:hover::before {
+  left: 100%;
+}
+
+.leaderCard:hover {
+  transform: translateY(-10px) translateZ(0);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.leaderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: all 0.5s ease;
+  filter: grayscale(0.2);
+  transform: translateZ(0);
+}
+
+.leaderCard:hover .leaderImage {
+  transform: scale(1.05) translateZ(0);
+  filter: grayscale(0);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(30, 58, 138, 0.4) 100%);
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.leaderCard:hover .imageOverlay {
+  background: linear-gradient(to bottom, transparent 0%, rgba(30, 58, 138, 0.2) 100%);
+}
+
+.cardContent {
+  padding: 35px 30px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.leaderCard h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  color: #fbbf24;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: inline-block;
+}
+
+.leaderCard h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #f59e0b;
+  transition: width 0.3s ease;
+}
+
+.leaderCard:hover h3::after {
+  width: 60px;
+}
+
+.leaderCard p {
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+  color: #e5e7eb;
+  font-size: 1.05rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.profileButton {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transform: translateZ(0);
+}
+
+.profileButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.profileButton:hover::before {
+  left: 100%;
+}
+
+.profileButton:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Media Queries */
+
+/* Large devices (desktops, 1024px and down) */
+@media (max-width: 1024px) {
+  .leadersGrid {
+    gap: 25px;
+  }
+  
+  .leaderCard {
+    padding: 0;
+  }
+  
+  .imageContainer {
+    height: 220px;
+  }
+  
+  .cardContent {
+    padding: 25px 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .leaderCard h3 {
+    font-size: 1.4rem;
+  }
+  
+  .leaderCard p {
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  /* Reduced hover effects for tablets */
+  .leaderCard:hover {
+    transform: translateY(-8px) translateZ(0);
+  }
+  
+  .leaderCard:hover .leaderImage {
+    transform: scale(1.03) translateZ(0);
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .leadershipSection {
+    padding: 40px 0;
+  }
+  
+  .leadersGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .sectionTitle {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .leaderCard h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .imageContainer {
+    height: 200px;
+  }
+  
+  .cardContent {
+    padding: 20px 18px;
+  }
+  
+  .leaderCard p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .profileButton {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  
+  /* Further reduced hover effects for smaller tablets */
+  .leaderCard:hover {
+    transform: translateY(-5px) translateZ(0);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  .leaderCard:hover .leaderImage {
+    transform: scale(1.02) translateZ(0);
+  }
+}
+
+/* Small devices (large phones, 425.6px and down) */
+@media (max-width: 425.6px) {
+  .leadershipSection {
+    padding: 30px 0;
+  }
+  
+  .leadersGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .leaderCard {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  
+  .imageContainer {
+    height: 180px;
+  }
+  
+  .cardContent {
+    padding: 20px 15px;
+  }
+  
+  .leaderCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .leaderCard p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .profileButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 180px;
+  }
+  
+  /* Minimal hover effects for mobile */
+  .leaderCard:hover {
+    transform: translateY(-3px) translateZ(0);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .leaderCard:hover .leaderImage {
+    transform: scale(1.01) translateZ(0);
+  }
+  
+  .leaderCard:hover h3::after {
+    width: 40px;
+  }
+}
+
+/* Extra small devices (phones, 375.2px and down) */
+@media (max-width: 375.2px) {
+  .leadershipSection {
+    padding: 25px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .leaderCard {
+    max-width: 100%;
+  }
+  
+  .imageContainer {
+    height: 160px;
+  }
+  
+  .cardContent {
+    padding: 18px 12px;
+  }
+  
+  .leaderCard h3 {
+    font-size: 1.1rem;
+  }
+  
+  .leaderCard p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profileButton {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    max-width: 160px;
+  }
+}
+
+/* Very small devices (320px and below) */
+@media (max-width: 320px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .imageContainer {
+    height: 140px;
+  }
+  
+  .cardContent {
+    padding: 15px 10px;
+  }
+  
+  .leaderCard h3 {
+    font-size: 1rem;
+  }
+  
+  .leaderCard p {
+    font-size: 0.8rem;
+  }
+  
+  .profileButton {
+    padding: 7px 16px;
+    font-size: 0.8rem;
+    max-width: 140px;
+  }
+}
+
+/* Landscape mode for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .leadershipSection {
+    padding: 30px 0;
+  }
+  
+  .leadersGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .imageContainer {
+    height: 120px;
+  }
+  
+  .cardContent {
+    padding: 15px 10px;
+  }
+  
+  .leaderCard h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .leaderCard p {
+    font-size: 0.75rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .profileButton {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    max-width: 120px;
+  }
+  
+  /* Disable most hover effects in landscape for performance */
+  .leaderCard:hover {
+    transform: translateY(-2px) translateZ(0);
+  }
+  
+  .leaderCard:hover .leaderImage {
+    transform: none;
+  }
+}
