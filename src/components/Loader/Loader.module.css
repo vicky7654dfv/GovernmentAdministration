@@ -1,0 +1,266 @@
+.loaderWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.loaderWrap.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.3));
+}
+
+.loaderBar {
+  width: 300px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loaderProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  border-radius: 10px;
+  animation: loading 2s ease-in-out infinite, shimmer 1.5s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+.loadingText {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  animation: textPulse 2s ease-in-out infinite;
+  margin: 0;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.3)) brightness(1);
+  }
+  100% {
+    filter: drop-shadow(0 15px 30px rgba(255, 255, 255, 0.5)) brightness(1.2);
+  }
+}
+
+@keyframes loading {
+  0% {
+    left: -30%;
+    width: 30%;
+  }
+  50% {
+    width: 40%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  }
+  50% {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  }
+  100% {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  }
+}
+
+@keyframes textPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* Media Queries - Matching your existing breakpoints */
+
+/* Large devices (desktops, 1024px and down) */
+@media (max-width: 1024px) {
+  .logo {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .loaderBar {
+    width: 280px;
+  }
+  
+  .loadingText {
+    font-size: 1.1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .loaderContainer {
+    gap: 25px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .loaderBar {
+    width: 250px;
+    height: 5px;
+  }
+  
+  .loadingText {
+    font-size: 1rem;
+  }
+}
+
+/* Small devices (large phones, 425.6px and down) */
+@media (max-width: 425.6px) {
+  .loaderContainer {
+    gap: 20px;
+  }
+  
+  .logo {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .loaderBar {
+    width: 220px;
+    height: 4px;
+  }
+  
+  .loadingText {
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* Extra small devices (phones, 375.2px and down) */
+@media (max-width: 375.2px) {
+  .loaderContainer {
+    gap: 18px;
+  }
+  
+  .logo {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .loaderBar {
+    width: 200px;
+  }
+  
+  .loadingText {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small devices (320px and below) */
+@media (max-width: 320px) {
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .loaderBar {
+    width: 180px;
+  }
+  
+  .loadingText {
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape mode for mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .loaderContainer {
+    gap: 15px;
+    transform: scale(0.8);
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .loaderBar {
+    width: 200px;
+    height: 3px;
+  }
+  
+  .loadingText {
+    font-size: 0.8rem;
+  }
+}
+
+/* High-resolution displays */
+@media (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .loaderProgress,
+  .loadingText {
+    animation: none;
+  }
+  
+  .logo {
+    transform: scale(1);
+  }
+  
+  .loaderProgress {
+    animation: loading 4s ease-in-out infinite;
+  }
+}
