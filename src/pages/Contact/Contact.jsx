@@ -15,18 +15,14 @@ export default function Contact() {
   };
 
   const handleMapClick = () => {
-    window.open("https://maps.google.com/?q=Government+Secretariat+New+Delhi", "_blank");
+    window.open(
+      "https://maps.google.com/?q=Government+Secretariat+New+Delhi",
+      "_blank"
+    );
   };
 
-  const handleSocialMediaClick = (platform) => {
-    const urls = {
-      twitter: "https://twitter.com/login",
-      facebook: "https://facebook.com/login",
-      linkedin: "https://linkedin.com/login",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/"
-    };
-    window.open(urls[platform], "_blank");
+  const handleSocialMediaClick = () => {
+    navigate("/Error");
   };
 
   return (
@@ -150,37 +146,37 @@ export default function Contact() {
               <h3>Connect With Us</h3>
               <p>Follow us on social media for latest updates</p>
               <div className={Style.socialMediaLinks}>
-                <button 
+                <button
                   className={Style.socialButton}
-                  onClick={() => handleSocialMediaClick('twitter')}
+                  onClick={handleSocialMediaClick}
                 >
                   <i className="fa-brands fa-x-twitter"></i>
                   Twitter
                 </button>
-                <button 
+                <button
                   className={Style.socialButton}
-                  onClick={() => handleSocialMediaClick('facebook')}
+                  onClick={handleSocialMediaClick}
                 >
                   <i className="fa-brands fa-facebook-f"></i>
                   Facebook
                 </button>
-                <button 
+                <button
                   className={Style.socialButton}
-                  onClick={() => handleSocialMediaClick('linkedin')}
+                  onClick={handleSocialMediaClick}
                 >
                   <i className="fa-brands fa-linkedin-in"></i>
                   LinkedIn
                 </button>
-                <button 
+                <button
                   className={Style.socialButton}
-                  onClick={() => handleSocialMediaClick('youtube')}
+                  onClick={handleSocialMediaClick}
                 >
                   <i className="fa-brands fa-youtube"></i>
                   YouTube
                 </button>
-                <button 
+                <button
                   className={Style.socialButton}
-                  onClick={() => handleSocialMediaClick('instagram')}
+                  onClick={handleSocialMediaClick}
                 >
                   <i className="fa-brands fa-instagram"></i>
                   Instagram
@@ -347,7 +343,8 @@ export default function Contact() {
                     Gate No. 35
                   </li>
                   <li>
-                    <i className="fa-solid fa-wheelchair"></i> Wheelchair accessible
+                    <i className="fa-solid fa-wheelchair"></i> Wheelchair
+                    accessible
                   </li>
                 </ul>
               </div>

@@ -35,7 +35,7 @@
   margin: 0 auto;
 }
 
-.phoneInputSection, .otpInputSection {
+.phoneInputSection {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -61,12 +61,7 @@
   box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
 }
 
-.otpButtons {
-  display: flex;
-  gap: 15px;
-}
-
-.btnPrimary, .btnSecondary {
+.btnPrimary {
   padding: 12px 30px;
   border: none;
   border-radius: 8px;
@@ -74,10 +69,6 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  flex: 1;
-}
-
-.btnPrimary {
   background: #1e3a8a;
   color: white;
 }
@@ -93,19 +84,7 @@
   cursor: not-allowed;
 }
 
-.btnSecondary {
-  background: transparent;
-  color: #1e3a8a;
-  border: 2px solid #1e3a8a;
-}
-
-.btnSecondary:hover {
-  background: #1e3a8a;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.errorPopup, .successPopup {
+.errorPopup {
   padding: 15px;
   border-radius: 8px;
   margin-top: 15px;
@@ -113,6 +92,9 @@
   align-items: center;
   gap: 10px;
   animation: slideDown 0.3s ease;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
 }
 
 @keyframes slideDown {
@@ -124,18 +106,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.errorPopup {
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
-}
-
-.successPopup {
-  background: #f0fdf4;
-  color: #16a34a;
-  border: 1px solid #bbf7d0;
 }
 
 /* Media Queries */
@@ -161,10 +131,6 @@
   .aadharContainer h2 {
     font-size: 1.5rem;
   }
-  
-  .otpButtons {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 375.2px) {
@@ -172,7 +138,7 @@
     padding: 10px 14px;
   }
   
-  .btnPrimary, .btnSecondary {
+  .btnPrimary {
     padding: 10px 20px;
     font-size: 0.9rem;
   }

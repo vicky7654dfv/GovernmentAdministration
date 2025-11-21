@@ -9,10 +9,10 @@ export default function Footer() {
   const location = useLocation();
 
   const handleCategoryClick = (category) => {
-  sessionStorage.setItem("scrollToTop", "true");
-  setActiveCategory(category);
-  navigate("/");
-};
+    sessionStorage.setItem("scrollToTop", "true");
+    setActiveCategory(category);
+    navigate("/");
+  };
 
   const handleQuickLinkClick = (e, path) => {
     e.preventDefault();
@@ -34,8 +34,9 @@ export default function Footer() {
     }
   };
 
-  const handleExternalLink = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const handleErrorLink = (e) => {
+    e.preventDefault();
+    navigate("/Error");
   };
 
   return (
@@ -183,41 +184,29 @@ export default function Footer() {
           </p>
           <div className={Style.media}>
             <a
-              href="https://twitter.com"
-              onClick={(e) => {
-                e.preventDefault();
-                handleExternalLink("https://twitter.com");
-              }}
+              href="/Error"
+              onClick={handleErrorLink}
               className={Style.socialLink}
             >
               <i className="fa-brands fa-x-twitter"></i>
             </a>
             <a
-              href="https://facebook.com"
-              onClick={(e) => {
-                e.preventDefault();
-                handleExternalLink("https://facebook.com");
-              }}
+              href="/Error"
+              onClick={handleErrorLink}
               className={Style.socialLink}
             >
               <i className="fa-brands fa-facebook-f"></i>
             </a>
             <a
-              href="https://linkedin.com"
-              onClick={(e) => {
-                e.preventDefault();
-                handleExternalLink("https://linkedin.com");
-              }}
+              href="/Error"
+              onClick={handleErrorLink}
               className={Style.socialLink}
             >
               <i className="fa-brands fa-linkedin-in"></i>
             </a>
             <a
-              href="https://youtube.com"
-              onClick={(e) => {
-                e.preventDefault();
-                handleExternalLink("https://youtube.com");
-              }}
+              href="/Error"
+              onClick={handleErrorLink}
               className={Style.socialLink}
             >
               <i className="fa-brands fa-youtube"></i>
