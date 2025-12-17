@@ -1,7 +1,11 @@
+import React from 'react';
 import styles from './Leadership.module.css';
 import presidentImage from '../../assets/Leadership/1.webp';
 import primeMinisterImage from '../../assets/Leadership/2.webp';
 import chiefJusticeImage from '../../assets/Leadership/3.webp';
+// New imports for the bottom info section
+import constitutionImage from '../../assets/Leadership2/1.webp'; // Ensure this file exists
+import collaborationImage from '../../assets/Leadership2/2.webp'; // Ensure this file exists
 import { useNavigate } from 'react-router-dom';
 
 const Leadership = () => {
@@ -17,7 +21,7 @@ const Leadership = () => {
         "Supreme Commander of Armed Forces",
         "Appoints Prime Minister and Council of Ministers"
       ],
-      color: "#3B82F6",
+      color: "#1e3a8a", // Changed to Official Navy Blue
       image: presidentImage
     },
     {
@@ -31,7 +35,7 @@ const Leadership = () => {
         "Economic Reforms",
         "International Diplomacy"
       ],
-      color: "#10B981",
+      color: "#F97316", // Changed to Saffron-ish Orange
       image: primeMinisterImage
     },
     {
@@ -45,15 +49,18 @@ const Leadership = () => {
         "Constitutional Protection",
         "Legal System Modernization"
       ],
-      color: "#8B5CF6",
+      color: "#1e3a8a", // Official Navy Blue
       image: chiefJusticeImage
     }
   ];
-const navigate=useNavigate();
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container} data-aos="fade">
       <div className={styles.header}>
         <h2 className={styles.title}>National Leadership</h2>
+        <div className={styles.separator}></div>
         <p className={styles.subtitle}>
           Meet the distinguished leaders guiding our nation towards progress and prosperity
         </p>
@@ -67,10 +74,9 @@ const navigate=useNavigate();
                 className={styles.leaderImage}
                 style={{ 
                   backgroundImage: `url(${leader.image})`,
-                  backgroundColor: leader.color 
+                  borderColor: leader.color 
                 }}
               >
-                <div className={styles.imageGlow} style={{ backgroundColor: leader.color }}></div>
               </div>
               <div className={styles.leaderBadge} style={{ backgroundColor: leader.color }}>
                 {leader.role}
@@ -87,7 +93,7 @@ const navigate=useNavigate();
                 <ul className={styles.achievementsList}>
                   {leader.achievements.map((achievement, idx) => (
                     <li key={idx} className={styles.achievementItem}>
-                      <i className="fa-solid fa-star" style={{ color: leader.color }}></i>
+                      <i className="fa-solid fa-check-circle" style={{ color: leader.color }}></i>
                       {achievement}
                     </li>
                   ))}
@@ -99,21 +105,23 @@ const navigate=useNavigate();
               <button 
                 className={styles.profileButton}
                 style={{ backgroundColor: leader.color }}
-              onClick={()=>{navigate("/Error")}}>
-                View Full Profile
-                <i className="fa-solid fa-arrow-right"></i>
+                onClick={()=>{navigate("/Error")}}
+              >
+                View Official Profile
+                <i className="fa-solid fa-chevron-right"></i>
               </button>
             </div>
-
-            <div className={styles.cardGlow} style={{ backgroundColor: leader.color }}></div>
+            {/* Tricolor Bottom Border for Government feel */}
+            <div className={styles.tricolorBar}></div>
           </div>
         ))}
       </div>
 
+      {/* Info Section with Images instead of Icons */}
       <div className={styles.leadershipInfo}>
         <div className={styles.infoCard}>
-          <div className={styles.infoIcon}>
-            <i className="fa-solid fa-shield-alt"></i>
+          <div className={styles.infoImageWrapper}>
+            <img src={constitutionImage} alt="Constitution" className={styles.infoImg} />
           </div>
           <div className={styles.infoContent}>
             <h3>Constitutional Framework</h3>
@@ -122,8 +130,8 @@ const navigate=useNavigate();
         </div>
         
         <div className={styles.infoCard}>
-          <div className={styles.infoIcon}>
-            <i className="fa-solid fa-handshake"></i>
+          <div className={styles.infoImageWrapper}>
+            <img src={collaborationImage} alt="Collaboration" className={styles.infoImg} />
           </div>
           <div className={styles.infoContent}>
             <h3>Collaborative Governance</h3>

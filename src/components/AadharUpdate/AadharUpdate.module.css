@@ -1,145 +1,233 @@
+/* Container - Clean, Spacious, Tech-White */
 .aadharUpdateComponent {
-  padding: 40px 0;
-  animation: fadeIn 0.8s ease-in;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif; /* Recommended font, falls back to sans-serif */
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f3f4f6 100%);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+/* Main Card - Starlink Aesthetic (Clean lines, functional) */
 .aadharContainer {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 5px 20px rgba(30, 58, 138, 0.1);
-  max-width: 500px;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  max-width: 480px;
+  padding: 50px 40px;
+  position: relative;
+  /* Subtle, crisp shadow instead of a blurry blob */
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Tech Corners (The "Connection" CSS) */
+.cornerTL, .cornerBR {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  transition: all 0.4s ease;
+}
+
+.cornerTL {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cornerBR {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.aadharContainer:hover .cornerTL,
+.aadharContainer:hover .cornerBR {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.5;
+}
+
+/* Typography */
+.headerSection {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .aadharContainer h2 {
-  color: #1e3a8a;
-  margin-bottom: 10px;
-  font-size: 2rem;
-  text-align: center;
+  color: #111;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.separator {
+  width: 40px;
+  height: 2px;
+  background: #000;
+  margin: 15px auto;
 }
 
 .aadharContainer p {
-  color: #6b7280;
-  margin-bottom: 30px;
-  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
+/* Form Styles */
 .aadharForm {
-  max-width: 400px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .phoneInputSection {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .aadharForm label {
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.activeLabel {
+  color: #000 !important;
+}
+
+/* Input Wrapper - The High Tech Part */
+.inputWrapper {
+  position: relative;
+  width: 100%;
 }
 
 .aadharForm input {
-  padding: 12px 16px;
-  border: 2px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 1rem;
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  font-size: 1.2rem;
+  font-family: monospace; /* Tech feel for numbers */
+  color: #000;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
+  border-radius: 0;
 }
 
 .aadharForm input:focus {
   outline: none;
-  border-color: #1e3a8a;
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  border-bottom: 1px solid #000;
 }
 
+.aadharForm input::placeholder {
+  color: #ddd;
+  letter-spacing: 2px;
+}
+
+/* Animated Scan Line under input */
+.scanLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #000;
+  transition: width 0.4s ease;
+}
+
+.aadharForm input:focus + .scanLine {
+  width: 100%;
+}
+
+/* Button - Futuristic & Flat */
 .btnPrimary {
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  position: relative;
+  padding: 18px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   cursor: pointer;
+  overflow: hidden;
   transition: all 0.3s ease;
-  background: #1e3a8a;
-  color: white;
+  margin-top: 10px;
 }
 
 .btnPrimary:hover:not(:disabled) {
-  background: #1e40af;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+  background: #fff;
+  color: #000;
 }
 
 .btnPrimary:disabled {
-  background: #9ca3af;
+  background: #eee;
+  border-color: #eee;
+  color: #aaa;
   cursor: not-allowed;
 }
 
+/* Error State - Minimalist */
 .errorPopup {
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 15px;
+  font-size: 0.75rem;
+  color: #e11d48;
   display: flex;
   align-items: center;
   gap: 10px;
-  animation: slideDown 0.3s ease;
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
+  padding: 10px;
+  background: rgba(225, 29, 72, 0.05);
+  border-left: 2px solid #e11d48;
+  animation: slideIn 0.3s ease;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.errorIcon {
+  font-weight: bold;
+  font-family: monospace;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .aadharUpdateComponent {
-    padding: 30px 0;
-  }
-  
   .aadharContainer {
-    padding: 30px;
+    padding: 40px 30px;
+    max-width: 90%;
   }
 }
 
 @media (max-width: 425.6px) {
   .aadharUpdateComponent {
-    padding: 20px 0;
+    padding: 40px 15px;
   }
   
   .aadharContainer {
-    padding: 20px;
+    padding: 30px 20px;
+    box-shadow: none;
+    border: 1px solid #eee;
   }
   
-  .aadharContainer h2 {
-    font-size: 1.5rem;
+  .cornerTL, .cornerBR {
+    display: none; /* Simplify for mobile */
   }
-}
 
-@media (max-width: 375.2px) {
-  .aadharForm input {
-    padding: 10px 14px;
-  }
-  
-  .btnPrimary {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+  .aadharContainer h2 {
+    font-size: 1.2rem;
   }
 }

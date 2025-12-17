@@ -13,7 +13,6 @@ const AboutHero = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Start counter animation
           const targetValues = { citizens: 1400000000, schemes: 250, departments: 78 };
           const duration = 3000;
           const steps = 60;
@@ -118,15 +117,21 @@ const AboutHero = () => {
 
           <div className={styles.features}>
             <div className={styles.feature}>
-              <i className="fa-solid fa-check-double"></i>
+              <div className={styles.featureIconBox}>
+                <i className="fa-solid fa-check-double"></i>
+              </div>
               <span>Transparent Governance</span>
             </div>
             <div className={styles.feature}>
-              <i className="fa-solid fa-hand-holding-heart"></i>
+              <div className={styles.featureIconBox}>
+                <i className="fa-solid fa-hand-holding-heart"></i>
+              </div>
               <span>Citizen-Centric Services</span>
             </div>
             <div className={styles.feature}>
-              <i className="fa-solid fa-chart-line"></i>
+              <div className={styles.featureIconBox}>
+                <i className="fa-solid fa-chart-line"></i>
+              </div>
               <span>Digital Transformation</span>
             </div>
           </div>

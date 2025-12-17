@@ -1,126 +1,134 @@
+/* Container - Keeping the requested background */
 .container {
-  padding: 20px 20px;
-  background:  rgba(248, 249, 250, 0.85);
+  padding: 60px 20px;
+  background: rgba(248, 249, 250, 0.85);
+  backdrop-filter: blur(10px);
+  border-top: 5px solid #1e3a8a; /* Official Top Border */
 }
 
+/* Header Styling - More Official/Statuesque */
 .header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   color: #1e3a8a;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.separator {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF9933, #ffffff, #138808); /* Tricolor Gradient */
+  margin: 0 auto 20px;
+  border-radius: 2px;
 }
 
 .subtitle {
-  font-size: 1.3rem;
-  color: #64748b;
-  max-width: 600px;
+  font-size: 1.25rem;
+  color: #555;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+  font-family: 'Georgia', serif; /* Serif for a more official tone */
+  font-style: italic;
 }
 
+/* Grid Layout */
 .leadersGrid {
   max-width: 1200px;
-  margin: 0 auto 60px;
+  margin: 0 auto 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 35px;
 }
 
+/* Card Styling - Official "ID Card" aesthetic */
 .leaderCard {
   background: white;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 15px 50px rgba(30, 58, 138, 0.1);
-  border: 1px solid rgba(30, 58, 138, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
   transition: all 0.4s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .leaderCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(30, 58, 138, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.12);
+  border-color: #cbd5e1;
+}
+
+/* Tricolor bottom bar for cards */
+.tricolorBar {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #FF9933 33%, #ffffff 33%, #ffffff 66%, #138808 66%);
+  margin-top: auto;
 }
 
 .cardHeader {
   position: relative;
-  padding: 30px 30px 20px;
+  padding: 40px 20px 20px;
+  background: linear-gradient(to bottom, #f8fafc, #fff);
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .leaderImage {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  position: relative;
-  z-index: 2;
-  color: white;
-  font-size: 2.5rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.imageGlow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 140px;
   height: 140px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.3;
-  filter: blur(20px);
-  z-index: 1;
+  border-radius: 50%; /* Circle */
+  margin: 0 auto;
+  border: 4px solid; /* Color comes from inline style */
+  background-size: cover;
+  background-position: top center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 3px;
+  background-clip: content-box;
+  background-color: white;
 }
 
 .leaderBadge {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 8px 16px;
-  border-radius: 20px;
+  top: 15px;
+  right: 15px;
+  padding: 6px 14px;
+  border-radius: 50px;
   color: white;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .cardContent {
-  padding: 0 30px 30px;
+  padding: 25px 30px;
+  text-align: center;
+  flex-grow: 1;
 }
 
 .leaderName {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 800;
   color: #1e293b;
   margin-bottom: 5px;
-  text-align: center;
 }
 
 .leaderTitle {
-  font-size: 1.1rem;
-  color: #64748b;
-  text-align: center;
-  margin-bottom: 20px;
-  font-weight: 500;
+  font-size: 1rem;
+  color: #1e3a8a; /* Official Blue */
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .leaderDescription {
@@ -128,19 +136,25 @@
   line-height: 1.6;
   color: #64748b;
   margin-bottom: 25px;
-  text-align: center;
 }
 
 .achievements {
-  margin-top: 25px;
+  text-align: left;
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
 }
 
 .achievementsTitle {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #1e293b;
-  margin-bottom: 15px;
-  font-weight: 600;
-  text-align: left;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 5px;
+  display: inline-block;
 }
 
 .achievementsList {
@@ -153,102 +167,100 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding: 8px 0;
-  color: #374151;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  padding: 6px 0;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .achievementItem i {
-  margin-top: 2px;
-  font-size: 0.8rem;
-  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 0.9rem;
 }
 
 .cardFooter {
-  padding: 20px 30px 30px;
-  border-top: 1px solid #f1f5f9;
+  padding: 20px 30px;
 }
 
 .profileButton {
   width: 100%;
-  padding: 12px 20px;
-  background: #3B82F6;
+  padding: 14px 20px;
   color: white;
   border: none;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .profileButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.cardGlow {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  opacity: 0.1;
-  transition: left 0.8s ease;
-}
-
-.leaderCard:hover .cardGlow {
-  left: 100%;
-}
-
+/* --- INFO SECTION (Updated with Images) --- */
 .leadershipInfo {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 
 .infoCard {
   background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
-  border: 1px solid rgba(30, 58, 138, 0.1);
+  padding: 0; /* Removed padding to let image sit flush or be styled specifically */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.05);
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center; /* Vertically center content */
+  gap: 25px;
   transition: all 0.3s ease;
+  overflow: hidden;
+  padding-right: 25px; /* Padding for text */
 }
 
 .infoCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(30, 58, 138, 0.12);
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
 }
 
-.infoIcon {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
+.infoImageWrapper {
+  width: 150px;
+  height: 150px;
   flex-shrink: 0;
+  position: relative;
+}
+
+.infoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Extra styling requested */
+  border-top-right-radius: 100px; 
+  border-bottom-right-radius: 100px;
+  border-right: 4px solid #FF9933; /* Saffron Accent */
+  box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+}
+
+/* Alternate the second card style for visual interest */
+.infoCard:nth-child(2) .infoImg {
+  border-right: 4px solid #138808; /* Green Accent */
 }
 
 .infoContent h3 {
-  font-size: 1.3rem;
-  color: #1e293b;
-  margin-bottom: 10px;
-  font-weight: 600;
+  font-size: 1.4rem;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .infoContent p {
@@ -260,292 +272,89 @@
 
 /* 1024px Media Query */
 @media (max-width: 1024px) {
-  .container {
-    padding: 20px 20px;
-  }
-  
   .leadersGrid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 900px;
+    gap: 20px;
   }
-
-  .leadershipInfo {
-    max-width: 900px;
-    gap: 25px;
-  }
-
+  
   .title {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
+  
   .leaderImage {
-    width: 110px;
-    height: 110px;
-    font-size: 2.2rem;
-  }
-
-  .imageGlow {
-    width: 130px;
-    height: 130px;
-  }
-
-  .leaderName {
-    font-size: 1.5rem;
-  }
-
-  .leaderBadge {
-    font-size: 0.75rem;
-    padding: 6px 12px;
+    width: 120px;
+    height: 120px;
   }
 
   .infoCard {
-    padding: 25px;
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .infoImageWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .infoImg {
+    border-radius: 50%;
+    border-right: none;
+    border: 4px solid #e2e8f0;
   }
 }
 
 /* 768px Media Query */
 @media (max-width: 768px) {
-  .container {
-    padding: 20px 15px;
-  }
-
-  .header {
-    margin-bottom: 50px;
-  }
-
   .leadersGrid {
     grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 500px;
-    margin-bottom: 50px;
-  }
-
-  .title {
-    font-size: 2.2rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
     max-width: 500px;
   }
 
   .leadershipInfo {
     grid-template-columns: 1fr;
-    gap: 20px;
     max-width: 500px;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .leaderCard {
+    margin-bottom: 20px;
+  }
+}
+
+/* 425px & Mobile */
+@media (max-width: 425.6px) {
+  .container {
+    padding: 40px 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .leaderImage {
+    width: 110px;
+    height: 110px;
   }
 
   .infoCard {
     padding: 25px;
   }
 
-  .leaderCard {
-    margin: 0;
-  }
-
-  .leaderBadge {
-    top: 10px;
-    right: 5px;
-  }
-}
-
-/* 425.6px Media Query */
-@media (max-width: 425.6px) {
-  .container {
-    padding: 20px 12px;
-  }
-
-  .header {
-    margin-bottom: 40px;
-  }
-
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .leadersGrid {
-    gap: 25px;
-    margin-bottom: 40px;
-  }
-
-  .leaderCard {
-    margin: 0;
-  }
-
-  .cardHeader {
-    padding: 25px 20px 15px;
-  }
-
-  .leaderImage {
-    width: 100px;
-    height: 100px;
-    font-size: 2rem;
-  }
-
-  .imageGlow {
-    width: 120px;
-    height: 120px;
-  }
-
-  .leaderBadge {
-    top: 10px;
-    right: 5px;
-    padding: 6px 12px;
-    font-size: 0.7rem;
-  }
-
-  .cardContent {
-    padding: 0 20px 25px;
-  }
-
-  .leaderName {
-    font-size: 1.4rem;
-  }
-
-  .leaderTitle {
-    font-size: 1rem;
-  }
-
-  .leaderDescription {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-
-  .achievementsTitle {
-    font-size: 1rem;
-  }
-
-  .achievementItem {
-    font-size: 0.85rem;
-  }
-
-  .cardFooter {
-    padding: 15px 20px 25px;
-  }
-
-  .profileButton {
-    padding: 10px 16px;
-    font-size: 0.9rem;
-  }
-
-  .infoCard {
-    padding: 20px;
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .infoIcon {
-    align-self: center;
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
+  .infoImageWrapper {
+    width: 80px;
+    height: 80px;
   }
 
   .infoContent h3 {
     font-size: 1.2rem;
-  }
-
-  .infoContent p {
-    font-size: 0.9rem;
-  }
-}
-
-/* 375.2px Media Query */
-@media (max-width: 375.2px) {
-  .container {
-    padding: 20px 10px;
-  }
-
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
-
-  .cardHeader {
-    padding: 20px 15px 15px;
-  }
-
-  .leaderImage {
-    width: 90px;
-    height: 90px;
-    font-size: 1.8rem;
-  }
-
-  .imageGlow {
-    width: 110px;
-    height: 110px;
-  }
-
-  .leaderBadge {
-    top: 10px;
-    right: 5px;
-    padding: 5px 10px;
-    font-size: 0.65rem;
-  }
-
-  .cardContent {
-    padding: 0 15px 20px;
-  }
-
-  .leaderName {
-    font-size: 1.3rem;
-  }
-
-  .leaderTitle {
-    font-size: 0.95rem;
-  }
-
-  .leaderDescription {
-    font-size: 0.85rem;
-  }
-
-  .achievementsTitle {
-    font-size: 0.95rem;
-  }
-
-  .achievementItem {
-    font-size: 0.8rem;
-  }
-
-  .cardFooter {
-    padding: 15px 15px 20px;
-  }
-
-  .profileButton {
-    padding: 10px 14px;
-    font-size: 0.85rem;
-  }
-
-  .infoCard {
-    padding: 18px;
-  }
-
-  .infoIcon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-  }
-
-  .infoContent h3 {
-    font-size: 1.1rem;
-  }
-
-  .infoContent p {
-    font-size: 0.85rem;
   }
 }

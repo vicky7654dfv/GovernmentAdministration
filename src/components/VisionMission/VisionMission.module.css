@@ -1,7 +1,8 @@
 /* Normal CSS */
 .container {
   padding: 40px 20px;
-  background:  rgba(248, 249, 250, 0.85);
+  background: rgba(248, 249, 250, 0.85);
+  backdrop-filter: blur(10px);
 }
 
 .header {
@@ -36,15 +37,31 @@
   gap: 50px;
 }
 
+/* --- ENHANCED CARD STYLES --- */
 .visionCard, .missionCard {
   background: white;
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 15px 50px rgba(30, 58, 138, 0.1);
-  border: 1px solid rgba(30, 58, 138, 0.1);
-  transition: all 0.4s ease;
+  border-radius: 24px;
+  /* Multi-layer shadow for depth */
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.05), 
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  /* Subtle border */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hover Effect: Lift + Glow + Border Color */
+.visionCard:hover, .missionCard:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(30, 58, 138, 0.15);
+  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .visionCard.animated, .missionCard.animated {
@@ -57,25 +74,72 @@
   opacity: 0;
 }
 
-.cardIcon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
+/* BACKGROUND GLOW ELEMENT */
+.cardGlow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(37, 99, 235, 0.05), 
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 0;
+  pointer-events: none;
 }
 
+.visionCard:hover .cardGlow, .missionCard:hover .cardGlow {
+  left: 100%;
+}
+
+/* --- IMAGE WRAPPER (Updated) --- */
+.imageWrapper {
+  /* Flexible width with max-limit for responsiveness */
+  width: 100%;
+  max-width: 280px; 
+  height: 250px; /* Fixed height ensures alignment between cards */
+  margin: 0 auto 30px; /* Centers the image */
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills the rounded corners */
+  
+  /* --- REQUESTED EXTRA STYLING --- */
+  border-radius: 30px; /* Smooth rounded corners */
+  border: 6px solid rgba(255, 255, 255, 0.9); /* White frame effect */
+  box-shadow: 0 15px 35px rgba(30, 58, 138, 0.2); /* Deep shadow for 3D pop */
+  transition: all 0.4s ease;
+}
+
+.visionCard:hover .imageWrapper, .missionCard:hover .imageWrapper {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.visionCard:hover .cardImage, .missionCard:hover .cardImage {
+  border-color: #ffffff;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+}
+
+/* Typography */
 .cardTitle {
   font-size: 1.8rem;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .cardDescription {
@@ -83,42 +147,54 @@
   line-height: 1.7;
   color: #64748b;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
 }
 
+/* Goals (Vision) */
 .visionGoals {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .goal {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 15px;
-  background: rgba(30, 58, 138, 0.05);
-  border-radius: 10px;
-  border-left: 4px solid #10B981;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
 }
 
 .goal:hover {
-  background: rgba(30, 58, 138, 0.1);
+  background: #fff;
+  border-color: #10B981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
   transform: translateX(5px);
 }
 
 .goal i {
   color: #10B981;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .goal span {
   color: #374151;
-  font-weight: 500;
+  font-weight: 600;
 }
 
+/* Progress (Mission) */
 .missionProgress {
-  margin-top: 30px;
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .progressTitle {
@@ -126,6 +202,7 @@
   color: #1e293b;
   margin-bottom: 25px;
   font-weight: 600;
+  text-align: left;
 }
 
 .progressItem {
@@ -146,7 +223,7 @@
 
 .progressHeader span:last-child {
   color: #1e3a8a;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .progressBar {
@@ -159,7 +236,7 @@
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
   border-radius: 10px;
   transition: width 2s ease-in-out;
   position: relative;
@@ -176,6 +253,7 @@
   animation: shimmer 2s infinite;
 }
 
+/* Values Section */
 .valuesSection {
   max-width: 1200px;
   margin: 0 auto;
@@ -198,36 +276,65 @@
 .valueCard {
   background: white;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.08);
-  border: 1px solid rgba(30, 58, 138, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 .valueCard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
+  border-color: #3b82f6;
 }
 
+/* --- NEW CREATIVE IMAGE CONTAINER STYLES --- */
 .valueIcon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-  border-radius: 15px;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  /* Creative shape and depth */
+  border-radius: 22px;
+  background: #ffffff;
+  /* Double layer shadow for floating effect */
+  box-shadow: 
+    0 10px 20px rgba(30, 58, 138, 0.1),
+    0 0 0 1px rgba(226, 232, 240, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 1.8rem;
-  margin: 0 auto 20px;
+  padding: 8px; /* Padding creates a frame */
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.valueImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px; /* Matches inner radius */
+  transition: transform 0.5s ease;
+}
+
+/* Creative Hover Effects for Values */
+.valueCard:hover .valueIcon {
+  transform: translateY(-5px) rotate(3deg);
+  box-shadow: 
+    0 15px 30px rgba(37, 99, 235, 0.15),
+    0 0 0 2px #3b82f6; /* Blue ring on hover */
+}
+
+.valueCard:hover .valueImage {
+  transform: scale(1.1); /* Subtle Zoom */
 }
 
 .valueCard h4 {
   font-size: 1.3rem;
   color: #1e293b;
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .valueCard p {
@@ -273,6 +380,11 @@
     padding: 30px;
   }
 
+  .imageWrapper {
+    max-width: 220px;
+    height: 200px;
+  }
+
   .title {
     font-size: 2rem;
   }
@@ -313,10 +425,15 @@
     padding: 25px;
   }
 
-  .cardIcon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+  .imageWrapper {
+    max-width: 160px;
+    height: 160px;
+    margin-bottom: 20px;
+  }
+  
+  .cardImage {
+    border-radius: 20px;
+    border-width: 4px;
   }
 
   .valuesGrid {
@@ -328,10 +445,16 @@
     padding: 25px;
   }
 
+  /* Updated for Image on Mobile */
   .valueIcon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    padding: 6px;
+  }
+  
+  .valueImage {
+    border-radius: 14px;
   }
 }
 

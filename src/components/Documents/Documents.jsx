@@ -156,7 +156,6 @@ const Documents = () => {
     setDownloading(doc.id);
 
     try {
-      // Create a temporary link element for download
       const link = document.createElement("a");
       link.href = doc.file;
       link.download = `${doc.title.replace(/\s+/g, "_")}.pdf`;
@@ -164,7 +163,6 @@ const Documents = () => {
       link.click();
       document.body.removeChild(link);
       
-      // Simulate a small delay for better UX
       await new Promise(resolve => setTimeout(resolve, 1000));
       
     } catch (error) {
@@ -222,11 +220,18 @@ const Documents = () => {
       <div className={styles.documentsGrid}>
         {documentsData.map((doc) => (
           <div key={doc.id} className={styles.documentCard}>
+            
+            {/* BACKGROUND ICON (The Big One) */}
+            <div className={styles.bgIcon}>
+              {getCategoryIcon(doc.category)}
+            </div>
+
             <div className={styles.cardHeader}>
               <div
                 className={styles.categoryBadge}
                 style={{ backgroundColor: getCategoryColor(doc.category) }}
               >
+                {/* Small icon kept for badge context, or remove if you prefer purely text */}
                 <span className={styles.categoryIcon}>
                   {getCategoryIcon(doc.category)}
                 </span>
