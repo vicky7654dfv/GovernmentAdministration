@@ -1,6 +1,6 @@
 .bankingSection {
   padding: 40px 0;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: rgba(248, 249, 250, 0.85);
   opacity: 0;
   animation: fadeIn 1s ease-in-out 0.4s forwards;
   position: relative;

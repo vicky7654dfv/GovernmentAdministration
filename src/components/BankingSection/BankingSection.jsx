@@ -4,11 +4,11 @@ import bankVid from '../../assets/Banking/bankVid.mp4';
 
 const BankingSection = () => {
   const handleLearnMore = () => {
-    window.location.href = "/Error";
+    window.location.href = "#/Error";
   };
 
   const handleApplyLoan = () => {
-    window.location.href = "/Error";
+    window.location.href = "#/Error";
   };
 
   return (

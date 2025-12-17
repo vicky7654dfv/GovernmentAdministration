@@ -1,6 +1,7 @@
 .serviceSlidesComponent {
   padding: 20px 0;
   animation: fadeIn 0.8s ease-in;
+  background-color: rgba(248, 249, 250, 0.85);
 }
 
 @keyframes fadeIn {

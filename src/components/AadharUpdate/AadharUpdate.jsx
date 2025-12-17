@@ -7,7 +7,7 @@ const AadharUpdate = () => {
 
   const handleUpdate = () => {
     if (phoneNumber.length === 10) {
-      window.location.href = '/Error';
+      window.location.href = '#/Error';
     } else {
       setShowError(true);
     }

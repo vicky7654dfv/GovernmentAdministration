@@ -24,7 +24,7 @@ const LeadershipSection = () => {
   ];
 
   const handleButtonClick = () => {
-    window.location.href = "/Error";
+    window.location.href = "#/Error";
   };
 
   return (

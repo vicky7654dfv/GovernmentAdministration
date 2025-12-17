@@ -1,7 +1,7 @@
 /* Normal CSS */
 .container {
   padding: 40px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background:  rgba(248, 249, 250, 0.85);
 }
 
 .header {

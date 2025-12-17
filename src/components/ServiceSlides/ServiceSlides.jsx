@@ -50,13 +50,13 @@ const ServiceSlides = () => {
                 <div className={Styles.slideButtons}>
                   <button 
                     className={Styles.btnPrimary}
-                    onClick={() => window.location.href = '/Error'}
+                    onClick={() => window.location.href = '#/Error'}
                   >
                     Learn More
                   </button>
                   <button 
                     className={Styles.btnSecondary}
-                    onClick={() => window.location.href = '/Error'}
+                    onClick={() => window.location.href = '#/Error'}
                   >
                     Apply Now
                   </button>

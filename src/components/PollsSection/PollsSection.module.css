@@ -1,6 +1,6 @@
 .pollsSection {
   padding: 40px 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background:  rgba(248, 249, 250, 0.85);
   opacity: 0;
   animation: fadeIn 1s ease-in-out 0.8s forwards;
   position: relative;

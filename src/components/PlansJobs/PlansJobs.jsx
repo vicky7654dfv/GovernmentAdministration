@@ -115,7 +115,7 @@ const PlansJobs = () => {
               </div>
               <button 
                 className={Styles.btnPrimary}
-                onClick={() => window.location.href = '/Error'}
+                onClick={() => window.location.href = '#/Error'}
               >
                 Apply Now
               </button>

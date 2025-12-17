@@ -3,7 +3,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+  background: rgba(248, 249, 250, 0.85);
   box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
 }
 

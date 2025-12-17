@@ -76,15 +76,15 @@ const Error = () => {
           <div className={styles.helpSection}>
             <h3 className={styles.helpTitle}>Need Immediate Assistance?</h3>
             <div className={styles.helpLinks}>
-              <a href="/Contact" className={styles.helpLink}>
+              <a href="#/Contact" className={styles.helpLink}>
                 <i className="fa-solid fa-headset"></i>
                 Contact Support
               </a>
-              <a href="/Services" className={styles.helpLink}>
+              <a href="#/Services" className={styles.helpLink}>
                 <i className="fa-solid fa-list"></i>
                 Browse Services
               </a>
-              <a href="/FAQ" className={styles.helpLink}>
+              <a href="#/FAQ" className={styles.helpLink}>
                 <i className="fa-solid fa-circle-question"></i>
                 Visit FAQ
               </a>

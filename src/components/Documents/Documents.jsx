@@ -283,7 +283,7 @@ const Documents = () => {
       <div className={styles.footer}>
         <p className={styles.footerText}>
           Looking for other documents?{" "}
-          <a href="/Contact" className={styles.contactLink}>
+          <a href="#/Contact" className={styles.contactLink}>
             Contact our support team
           </a>
         </p>

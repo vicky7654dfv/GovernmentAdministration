@@ -2,7 +2,7 @@
 .contactContainer {
   padding: 0 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+  background: rgba(248, 249, 250, 0.85);
 }
 
 .contactContent {

@@ -1,11 +1,17 @@
 /* Normal CSS */
 .footerWrap {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  /* CHANGED: Replaced Blue Gradient with Light Elite Glass */
+  background: rgba(248, 249, 250, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
   padding: 60px 40px 40px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
   gap: 40px;
-  color: white;
+  
+  /* CHANGED: Text color to dark grey */
+  color: #374151;
   position: relative;
   overflow: hidden;
 }
@@ -37,13 +43,15 @@
 .governmentLogo {
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.1);
+  /* CHANGED: Background to subtle dark tint */
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  /* CHANGED: Border to subtle dark */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .governmentLogo i {
@@ -54,12 +62,14 @@
 .govTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  /* CHANGED: Title to dark */
+  color: #111827;
   margin: 0;
 }
 
 .box p {
-  color: rgba(255, 255, 255, 0.8);
+  /* CHANGED: Text to dark grey */
+  color: #4b5563;
   line-height: 1.6;
   font-size: 0.95rem;
   margin: 0;
@@ -68,7 +78,8 @@
 .box h4 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: white;
+  /* CHANGED: Heading to dark */
+  color: #111827;
   margin-bottom: 15px;
   position: relative;
 }
@@ -98,7 +109,8 @@
 }
 
 .box ul li a {
-  color: rgba(255, 255, 255, 0.8);
+  /* CHANGED: Link color to dark grey */
+  color: #4b5563;
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.3s ease;
@@ -108,7 +120,8 @@
 }
 
 .box ul li a:hover {
-  color: #fbbf24;
+  /* CHANGED: Hover color to Blue (optional contrast) or Gold */
+  color: #2563eb; 
   transform: translateX(5px);
 }
 
@@ -116,7 +129,8 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  /* CHANGED: Text color to dark grey */
+  color: #4b5563;
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -128,9 +142,12 @@
 }
 
 .aboutBtn {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  /* CHANGED: Button background to subtle dark tint */
+  background: rgba(0, 0, 0, 0.05);
+  /* CHANGED: Text to dark */
+  color: #374151;
+  /* CHANGED: Border to subtle dark */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 0.95rem;
@@ -145,7 +162,8 @@
 }
 
 .aboutBtn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #fbbf24;
+  color: #111827; /* Dark text on hover */
   border-color: #fbbf24;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
@@ -160,7 +178,8 @@
 .socialLink {
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  /* CHANGED: Background to subtle dark tint */
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -168,11 +187,13 @@
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* CHANGED: Border to subtle dark */
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .socialLink i {
-  color: rgba(255, 255, 255, 0.8);
+  /* CHANGED: Icon color to dark grey */
+  color: #4b5563;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -181,6 +202,7 @@
   background: #fbbf24;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+  border-color: #fbbf24;
 }
 
 .socialLink:hover i {
@@ -188,20 +210,20 @@
 }
 
 .bottomFooter {
-  background: #1e3a8a;
+  /* CHANGED: Matches the glass theme, slightly darker/transparent */
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* Separator instead of background change */
   padding: 25px 40px;
   text-align: center;
 }
 
 .bottomFooter hr {
-  border: none;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.2);
-  margin-bottom: 20px;
+  display: none; /* Removed the old hr as we used border-top above */
 }
 
 .bottomFooter p {
-  color: rgba(255, 255, 255, 0.7);
+  /* CHANGED: Text to dark grey */
+  color: #6b7280;
   font-size: 0.9rem;
   margin: 0;
   line-height: 1.5;

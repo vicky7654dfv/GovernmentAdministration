@@ -1,6 +1,6 @@
 .container {
   padding: 40px 20px;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+  background:  rgba(248, 249, 250, 0.85);
   min-height: 100vh;
   display: flex;
   align-items: center;

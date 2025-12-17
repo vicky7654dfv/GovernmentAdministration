@@ -20,7 +20,7 @@ export default function Banner1() {
           Committed to building a better future through efficient governance 
           and citizen-focused services.
         </p>
-        <Link to="/services" className={Style.ctaButton}>Explore Services</Link>
+        <Link to="/Services" className={Style.ctaButton}>Explore Services</Link>
       </div>
     </div>
   );
